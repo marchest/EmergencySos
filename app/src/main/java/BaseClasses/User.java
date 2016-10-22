@@ -50,7 +50,7 @@ public class User extends Person {
                 msg.put(c,message);
             }
         }
-        if (msg.size()!=5){
+     /*   if (msg.size()!=5){
             if (!msg.contains(message)){
                 msg.add(message);
                 return true;
@@ -63,13 +63,14 @@ public class User extends Person {
         else{
             alertDialog.setMessage("you cant add more than 5 message");
                     return false;
-        }
+        }*/
+        return false;
     }
 
-    public List<Message> getMsg() {
+    /*public List<Message> getMsg() {
         return msg;
     }
-
+*/
 
     public Map<Date, Location> getLocationInfo() {
         return locationInfo;
