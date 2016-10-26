@@ -24,19 +24,6 @@
         <activity android:name=".MainActivity" />
 
         <!-- Opening Scene -->
-        <activity
-            android:name=".GpsActivity"
-            android:noHistory="true"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="com.google.android.gms.version"
-                android:value="@integer/google_play_services_version"/>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".UserInfoActivity" />
      <!--   <activity android:name=".GpsActivity"></activity> -->
         <service android:name=".GPS_Service"/>
