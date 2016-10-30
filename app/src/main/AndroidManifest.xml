@@ -21,12 +21,18 @@
         android:theme="@style/AppTheme">
 
         <!-- Main Activity -->
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </activity>>
 
         <!-- Opening Scene -->
         <activity android:name=".UserInfoActivity" />
      <!--   <activity android:name=".GpsActivity"></activity> -->
-        <service android:name=".GPS_Service"/>
+     <service android:name="baseClasses.LocationTracker"></service>
     </application>
 
 </manifest>
