@@ -8,11 +8,11 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
-     <!-- <uses-feature android:name="android.hardware.location.gps" />-->
+
+    <!-- <uses-feature android:name="android.hardware.location.gps" /> -->
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,19 +21,18 @@
         android:theme="@style/AppTheme">
 
         <!-- Main Activity -->
-        <activity android:name=".MainActivity" />
-        <!-- Opening Scene -->
-        <activity
-            android:name=".OpeningScene.SplashScreen"
-            android:noHistory="true"
-            android:screenOrientation="portrait">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".UserInfoActivity"></activity>
+            </activity>>
+
+        <!-- Opening Scene -->
+        <activity android:name=".UserInfoActivity" />
+     <!--   <activity android:name=".GpsActivity"></activity> -->
+     <service android:name="baseClasses.LocationTracker"></service>
     </application>
 
 </manifest>
