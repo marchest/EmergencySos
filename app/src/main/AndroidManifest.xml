@@ -32,7 +32,7 @@
         <!-- Opening Scene -->
         <activity android:name=".UserInfoActivity" />
      <!--   <activity android:name=".GpsActivity"></activity> -->
-     <service android:name="baseClasses.LocationTracker"></service>
+     <service android:name="baseClasses.GPS_Service "></service>
     </application>
 
 </manifest>
