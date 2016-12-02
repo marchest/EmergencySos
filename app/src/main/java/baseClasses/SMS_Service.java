@@ -24,7 +24,7 @@ public class SMS_Service extends Service {
     Handler handler = new Handler();
 
     SmsManager smsManager = SmsManager.getDefault();
-Intent intent;
+    Intent intent;
     @Override
     public IBinder onBind(Intent intent){
         return null;

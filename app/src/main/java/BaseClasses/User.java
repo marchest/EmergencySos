@@ -1,4 +1,4 @@
-package BaseClasses;
+package baseClasses;
 import android.location.Location;
 import android.support.v7.app.AlertDialog;
 import java.util.ArrayList;
@@ -50,28 +50,8 @@ public class User extends Person {
                 msg.put(c,message);
             }
         }
-     /*   if (msg.size()!=5){
-            if (!msg.contains(message)){
-                msg.add(message);
-                return true;
-            }
-            else{
-                alertDialog.setMessage("This message already exists");
-                return  false;
-            }
-        }
-        else{
-            alertDialog.setMessage("you cant add more than 5 message");
-                    return false;
-        }*/
         return false;
     }
-
-    /*public List<Message> getMsg() {
-        return msg;
-    }
-*/
-
     public Map<Date, Location> getLocationInfo() {
         return locationInfo;
     }
