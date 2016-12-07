@@ -62,7 +62,6 @@ public class NavigationActivity extends AppCompatActivity
         TextView emailText = (TextView) headerView.findViewById(R.id.email);
         emailText.setText("Furkan Kaya - Özay Öztürk");
 
-
         navigationView.setNavigationItemSelectedListener(this);
     }
 
