@@ -1,5 +1,10 @@
 package API;
 
+import android.util.Log;
+
+import com.google.gson.JsonParser;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,7 +32,7 @@ public class ApiCaller {
 
         urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setDoOutput(false);
-       // urlConnection.setRequestProperty("Authorization", "bearer " + AppStatic.TOKEN);
+        // urlConnection.setRequestProperty("Authorization", "bearer " + AppStatic.TOKEN);
         urlConnection.setRequestMethod("GET");
 
         urlConnection.connect();
@@ -35,8 +40,6 @@ public class ApiCaller {
         int status = urlConnection.getResponseCode();
         InputStream stream = urlConnection.getInputStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(stream));
-        //BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-
         char[] buffer = new char[1024];
 
         String jsonString = new String();
@@ -50,10 +53,18 @@ public class ApiCaller {
 
         jsonString = sb.toString();
 
-        System.out.println("JSON: " + jsonString);
-        JSONObject jObj = new JSONObject(jsonString);
-        return jObj;
+      //  System.out.println("JSON: " + jsonString);
+     //   JSONObject jObj = new JSONObject(jsonString);
+        JSONObject jo = new JSONObject();
+        JSONArray ja = new JSONArray(jsonString);
+        jo.put("arrayname",ja);
+     //   System.out.println(jo);
+
+        return jo;
     }
+
+
+
 
 
 
