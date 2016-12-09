@@ -1,13 +1,111 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgnd"
     tools:context="deu.emergencysos.UserInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <Button
+
+        android:id="@+id/update_user_info_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPDATE"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:layout_below="@+id/editTextSurname"
+        android:layout_alignLeft="@+id/editTextSurname"
+        android:layout_alignStart="@+id/editTextSurname"
+        android:layout_marginTop="26dp"
+        android:id="@+id/editTextPhone" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:hint="E-Mail"
+        android:id="@+id/editTextEMail"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/editTextPhone"
+        android:layout_alignLeft="@+id/editTextPhone"
+        android:layout_alignStart="@+id/editTextPhone" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/editTextEMail"
+        android:layout_marginTop="45dp"
+        android:weightSum="1"
+        android:id="@+id/radioGroup"
+        android:layout_alignLeft="@+id/editTextEMail"
+        android:layout_alignStart="@+id/editTextEMail"
+        android:layout_alignRight="@+id/editTextEMail"
+        android:layout_alignEnd="@+id/editTextEMail">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="Male"
+            android:id="@+id/radioButton"
+            android:layout_gravity="left"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/radioButton2"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:layout_weight="0.13" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Surname"
+        android:ems="10"
+        android:layout_marginTop="28dp"
+        android:id="@+id/editTextSurname"
+        android:layout_below="@+id/editTextName"
+        android:layout_alignLeft="@+id/editTextName"
+        android:layout_alignStart="@+id/editTextName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="Name"
+        android:id="@+id/editTextName"
+        android:layout_marginTop="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <!--user//name
+        surname
+        email
+        gender
+        phone
+
+        contact ->
+        name surname phone email-->
+
+</RelativeLayout>

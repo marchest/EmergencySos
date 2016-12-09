@@ -1,13 +1,48 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgnd"
     tools:context="deu.emergencysos.MessageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:text="ENTER YOUR MESSAGE DESCRIPTION"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="79dp"
+        android:id="@+id/textViewMessageHeader" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="Tap Here To Enter Description"
+        android:textAlignment="center"
+        android:ems="13"
+        android:id="@+id/editTextMessageHeader"
+        android:layout_marginTop="58dp"
+        android:layout_below="@+id/textViewMessageHeader"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"  />
+
+
+</RelativeLayout>

@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgnd"
-    tools:context="deu.emergencysos.UserInfoFragment">
-
+    tools:context="deu.emergencysos.EditContactFragment">
 
     <Button
 
-        android:id="@+id/save_button"
-        android:layout_width="90dp"
+        android:id="@+id/edit_button"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:text="SAVE"
-
+        android:text="EDIT CONTACT"
         android:padding="8dp"
         android:textColor="#fff"
         android:background="@color/colorPrimary"
@@ -48,7 +44,7 @@
         android:layout_alignLeft="@+id/editTextPhone"
         android:layout_alignStart="@+id/editTextPhone" />
 
-    <RadioGroup
+  <!--  <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="90dp"
         android:layout_below="@+id/editTextEMail"
@@ -77,6 +73,7 @@
             android:checked="false"
             android:layout_weight="0.13" />
     </RadioGroup>
+-->
 
     <EditText
         android:layout_width="wrap_content"
@@ -97,9 +94,8 @@
         android:ems="10"
         android:hint="Name"
         android:id="@+id/editTextName"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="78dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
 
 </RelativeLayout>
