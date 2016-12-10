@@ -22,21 +22,17 @@
         android:theme="@style/AppTheme">
 
         <!-- Main Activity -->
-        <activity android:name=".MainActivity">
-
-
-
-
-        </activity>
-
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".postActivity">
-        <!--    <intent-filter>
+
+            <!--
+                <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            </intent-filter>
+            -->
         </activity>
-
 
         <!-- Opening Scene -->
         <activity android:name=".UserInfoActivity" />
@@ -53,8 +49,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".AgreementActivity"></activity>
     </application>
 
 </manifest>

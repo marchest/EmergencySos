@@ -1,17 +1,18 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgnd"
     tools:context="deu.emergencysos.AboutUsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="230dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:text="  Hi Dear. We are students at Dokuz Eylul Unversity. This is a senior project. This application is developed for humanity. If you have heart attack or kidnapped or something else situation which you need help just push the button. Al of your contacts will be informed by us. You are safe since now." />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/textViewAboutUs"
+
+        android:text="  Hi Dear. We are students at Dokuz Eylul Unversity. This is a senior project. This application is developed for humanity. If you have heart attack or kidnapped or something else situation which you need help just push the button. Al of your contacts will be informed by us. You are safe since now."
+
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

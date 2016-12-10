@@ -5,7 +5,7 @@
     android:background="@drawable/backgnd"
     tools:context="deu.emergencysos.UserInfoFragment">
 
-
+    
     <Button
 
         android:id="@+id/update_user_info_button"
@@ -107,5 +107,4 @@
 
         contact ->
         name surname phone email-->
-
 </RelativeLayout>
