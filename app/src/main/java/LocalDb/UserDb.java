@@ -24,10 +24,10 @@ public class UserDb {
                 +COL_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COL_USERNAME + " TEXT,"
                 + COL_USERSURNAME + " TEXT,"
-                 +COL_USEREMAIL+"TEXT,"
-                 +COL_USERPHONE +"TEXT,"
-                 +COL_USERGENDER +"TEXT"
-                 + ")";
+                +COL_USEREMAIL+"TEXT,"
+                +COL_USERPHONE +"TEXT,"
+                +COL_USERGENDER +"TEXT"
+                + ")";
 
         return CREATE_TABLE_USER;
     }

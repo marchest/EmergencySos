@@ -10,11 +10,13 @@
     tools:context="deu.emergencysos.OpeningScene.SplashScreen">
 
     <ImageView
-        android:src="@drawable/head"
+        android:src="@drawable/splash"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

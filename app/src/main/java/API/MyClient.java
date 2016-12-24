@@ -109,8 +109,8 @@ public class MyClient {
         try {
             obj.put("userName", um.getName());
             obj.put("userSurname",um.getSurName());
-            obj.put("userGender", um.getGender());
             obj.put("userEmail",um.getEmail());
+            obj.put("userGender", um.getGender());
             obj.put("userPhone", um.getPhoneNumber());
             String objAsStr = obj.toString();
             //JSONObject jsonObject=ApiCaller.POST(AppStatic.URL,objAsStr);

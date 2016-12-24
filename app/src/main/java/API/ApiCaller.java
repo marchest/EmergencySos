@@ -16,7 +16,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 
 import Helper.AppStatic;
 
@@ -52,20 +54,17 @@ public class ApiCaller {
         br.close();
 
         jsonString = sb.toString();
+        urlConnection.disconnect();
 
-      //  System.out.println("JSON: " + jsonString);
-     //   JSONObject jObj = new JSONObject(jsonString);
+        //  System.out.println("JSON: " + jsonString);
+        //   JSONObject jObj = new JSONObject(jsonString);
         JSONObject jo = new JSONObject();
         JSONArray ja = new JSONArray(jsonString);
-        jo.put("arrayname",ja);
-     //   System.out.println(jo);
+        jo.put("arrayname", ja);
+        //   System.out.println(jo);
 
         return jo;
     }
-
-
-
-
 
 
     public static JSONObject POST(String uri, String json) {
@@ -79,7 +78,7 @@ public class ApiCaller {
             urlConnection.setDoOutput(true);
             urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setRequestProperty("Accept", "application/json");
-        //    urlConnection.setRequestProperty("Authorization", "bearer " + AppStatic.TOKEN);
+            //    urlConnection.setRequestProperty("Authorization", "bearer " + AppStatic.TOKEN);
             urlConnection.setRequestMethod("POST");
             urlConnection.connect();
 
@@ -112,5 +111,8 @@ public class ApiCaller {
         } catch (JSONException e) {
         }
         return jsonObject;
+
     }
+
+
 }

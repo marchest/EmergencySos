@@ -1,132 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:paddingBottom="@dimen/activity_vertical_margin"
-android:paddingLeft="@dimen/activity_horizontal_margin"
-android:paddingRight="@dimen/activity_horizontal_margin"
-android:paddingTop="@dimen/activity_vertical_margin"
-tools:context="deu.emergencysos.UserInfoActivity"
-android:background="@color/abc_color_highlight_material">
-
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="50dp"
-    android:id="@+id/imageView"
-    android:src="@drawable/unnamed"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentEnd="true"
-    android:layout_marginEnd="46dp" />
-
-<TextView
-    android:layout_width="160dp"
-    android:layout_height="50dp"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="Emergency"
-    android:id="@+id/textView"
-    android:textSize="30dp"
-    android:layout_alignParentStart="true"
-    android:layout_alignBottom="@+id/imageView"
-    android:layout_toStartOf="@+id/imageView"
-    android:textColor="#d91d1d"
-    android:shadowColor="#8d4545" />
-
-<LinearLayout
-    android:orientation="horizontal"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/textView"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="41dp"
-    android:id="@+id/linearLayout">
+    android:layout_height="match_parent"
+    android:background="@drawable/backgnd"
+    tools:context="deu.emergencysos.UserInfoFragment">
 
-    <EditText
-        android:layout_width="wrap_content"
+
+    <Button
+
+        android:id="@+id/save_button"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_weight="1" />
+        android:layout_below="@+id/radioGroup"
+        android:text="SAVE"
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="SurName"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_weight="1" />
-</LinearLayout>
-
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/linearLayout"
-    android:layout_toStartOf="@+id/imageView"
-    android:layout_marginTop="43dp"
-    android:id="@+id/linearLayout2">
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_weight="1"
-        android:text="Phone Number" />
-</LinearLayout>
+        android:hint="Phone Number"
+        android:layout_below="@+id/editTextSurname"
+        android:layout_alignLeft="@+id/editTextSurname"
+        android:layout_alignStart="@+id/editTextSurname"
+        android:layout_marginTop="26dp"
+        android:id="@+id/editTextPhone" />
 
-<RadioButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Female"
-    android:id="@+id/radioButton"
-    android:layout_below="@+id/linearLayout"
-    android:checked="false"
-    android:layout_alignEnd="@+id/imageView"
-    android:layout_toEndOf="@+id/linearLayout2" />
-
-<RadioButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Male"
-    android:id="@+id/radioButton2"
-    android:layout_alignBottom="@+id/linearLayout2"
-    android:checked="false"
-    android:layout_alignEnd="@+id/radioButton"
-    android:layout_toEndOf="@+id/linearLayout2" />
-
-<CheckBox
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="I agree the conditions"
-    android:id="@+id/checkBox"
-    android:layout_marginTop="100dp"
-    android:checked="false"
-    android:layout_below="@+id/radioButton2"
-    android:layout_alignParentStart="true"
-    android:layout_toStartOf="@+id/radioButton2" />
-
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@+id/checkBox"
-    android:layout_alignParentStart="true">
-
-    <Button
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue"
-        android:id="@+id/button"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="20dp"
-        android:visibility="visible"
-        android:onClick="onClick"
-        android:theme="@style/AppTheme" />
-</LinearLayout>
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:hint="E-Mail"
+        android:id="@+id/editTextEMail"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/editTextPhone"
+        android:layout_alignLeft="@+id/editTextPhone"
+        android:layout_alignStart="@+id/editTextPhone" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/editTextEMail"
+        android:layout_marginTop="45dp"
+        android:weightSum="1"
+        android:id="@+id/radioGroup"
+        android:layout_alignLeft="@+id/editTextEMail"
+        android:layout_alignStart="@+id/editTextEMail"
+        android:layout_alignRight="@+id/editTextEMail"
+        android:layout_alignEnd="@+id/editTextEMail">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="Male"
+            android:id="@+id/radioButton"
+            android:layout_gravity="left"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/radioButton2"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:layout_weight="0.13" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Surname"
+        android:ems="10"
+        android:layout_marginTop="8dp"
+        android:id="@+id/editTextSurname"
+        android:layout_below="@+id/editTextName"
+        android:layout_alignLeft="@+id/editTextName"
+        android:layout_alignStart="@+id/editTextName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="Name"
+        android:id="@+id/editTextName"
+        android:layout_marginTop="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

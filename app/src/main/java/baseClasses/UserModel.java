@@ -31,10 +31,11 @@ public class UserModel implements Serializable {
         this.email = email;
     }
 
-    public UserModel(String name, String surName, String gender, String phoneNumber) {
+    public UserModel(String name, String surName,String email ,String gender, String phoneNumber) {
         this.name = name;
         this.surName = surName;
         this.gender = gender;
+        this.email =email;
         this.phoneNumber = phoneNumber;
     }
 

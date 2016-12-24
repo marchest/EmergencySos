@@ -30,8 +30,8 @@ public class postActivity extends AppCompatActivity {
     Button postContact;
     Button getUserId;
     //{contactName:"Kagan",contactSurname:"Sarıca",contactPhone:"05364565669",userId:5}
-    Contact contact = new Contact("name2", "surname2", "05451234578", 5);
-    UserModel um = new UserModel("Badem", "Yılmaz", "Male", "05393223645");
+    Contact contact = new Contact("name234", "surname234", "05451234578", 5);
+    UserModel um = new UserModel("sondeneme", "sonn","son@gmail.com", "Male","999999");
     private static AsyncHttpClient client = new AsyncHttpClient();
 
     @Override

@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- <uses-feature android:name="android.hardware.location.gps" /> -->
@@ -22,21 +23,24 @@
         android:theme="@style/AppTheme">
 
         <!-- Main Activity -->
-        <activity android:name=".MainActivity">
-
-
-
-
-        </activity>
-
-        <activity android:name=".postActivity">
-        <!--    <intent-filter>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".OpeningScene.SplashScreen">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            </intent-filter>
         </activity>
+        <activity android:name=".postActivity">
 
+            <!--
+                <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
 
         <!-- Opening Scene -->
         <activity android:name=".UserInfoActivity" />
@@ -48,13 +52,14 @@
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
+        <activity android:name=".Silbunu">
+
+        </activity>
+        <activity android:name=".PrivacyPolicy"></activity>
     </application>
 
 </manifest>

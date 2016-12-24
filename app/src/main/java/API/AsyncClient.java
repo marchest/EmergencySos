@@ -62,7 +62,7 @@ public class AsyncClient extends AsyncTask<String, Void, JSONObject> {
                     e1.printStackTrace();
                 }
             }
-        } else if (method == "POST"){
+        } else if (method == "POST") {
             jo = ApiCaller.POST(AppStatic.URL + op, data);
         }
         return jo;

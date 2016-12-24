@@ -21,7 +21,8 @@ import baseClasses.SMS_Service;
 
 
 public class MainActivity extends AppCompatActivity {
-     boolean service_situtations = false;
+
+    boolean service_situtations = false;
     private Button btn_start, btn_stop;
     private TextView textView;
     private BroadcastReceiver broadcastReceiver;
@@ -59,29 +60,27 @@ public class MainActivity extends AppCompatActivity {
         btn_stop = (Button) findViewById(R.id.button2);
         textView = (TextView) findViewById(R.id.textView);
 
-        if (!runtime_permissions()&&smsRunTimePermissions()){
+        if (!runtime_permissions() && smsRunTimePermissions()) {
             enable_buttons();
-        }
-
-        else{
+        } else {
             enable_buttons();
         }
     }
 
     private void enable_buttons() {
 
-            btn_start.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+        btn_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-                    Intent gpsIntent = new Intent(getApplicationContext(), GPS_Service.class);
-                 //   Intent smsIntent = new Intent(getApplicationContext(), SMS_Service.class);
+                Intent gpsIntent = new Intent(getApplicationContext(), GPS_Service.class);
+                //   Intent smsIntent = new Intent(getApplicationContext(), SMS_Service.class);
 //                    startService(smsIntent);
-                    startService(gpsIntent);
-                    service_situtations = true;
+                startService(gpsIntent);
+                service_situtations = true;
 
-                }
-            });
+            }
+        });
 
         btn_stop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,9 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        }
-
-
+    }
 
 
     private boolean runtime_permissions() {
@@ -133,15 +130,16 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
-        @Override
-        public void onRequestPermissionsResult ( int requestCode, @NonNull String[] permissions,@NonNull int[] grantResults){
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-            if (requestCode == 100) {
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                    enable_buttons();
-                } else {
-                    runtime_permissions();
-                }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                enable_buttons();
+            } else {
+                runtime_permissions();
             }
         }
     }
+}

@@ -15,14 +15,18 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.design.internal.NavigationMenu;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import LocalDb.DbHelper;
+import deu.emergencysos.NavigationActivity;
+
 public class GPS_Service extends Service {
     int min = 1*60*1000;
     Handler handler = new Handler();
-
+    DbHelper dbHelper;
     SmsManager smsManager = SmsManager.getDefault();
     private LocationListener listener;
     private LocationManager locationManager;
@@ -35,7 +39,7 @@ public class GPS_Service extends Service {
 
     @Override
     public void onCreate() {
-
+        dbHelper =new DbHelper(getApplicationContext());
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -78,10 +82,23 @@ public class GPS_Service extends Service {
 
                 //     smsManager.sendTextMessage("05428425349",null,"The Screen is Turned Off",null,null);
                 try {
-                    smsManager.sendTextMessage("05428425349",null,locationInfo,null,null);
+                    Log.e("GpsService","1");
+                    Log.e("CoSize",""+dbHelper.getAllContacts().size());
+                    if (dbHelper.getAllContacts().size()!=0){
+                        for (Contact c:dbHelper.getAllContacts()
+                                ) {
+                            Log.e("GpsService","2");
+                            Log.e("dada","dede");
+                            Log.e("xxx",c.getPhone());
+                            smsManager.sendTextMessage(c.getPhone().toString(),null,locationInfo,null,null);
+                        }
+                    }
+
+                    //smsManager.sendTextMessage("05428425349",null,locationInfo,null,null);
                 }
                 catch (Exception e){
                     e.printStackTrace();
+                    Toast.makeText(getApplicationContext(),"Please add a contact first",Toast.LENGTH_LONG).show();
                 }
 
 

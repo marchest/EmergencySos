@@ -1,8 +1,8 @@
 package deu.emergencysos;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.support.v7.app.ActionBarActivity;
 
 
 public class NavigationActivity extends AppCompatActivity
@@ -60,9 +59,17 @@ public class NavigationActivity extends AppCompatActivity
         //How to change elements in the header programatically
         View headerView = navigationView.getHeaderView(0);
         TextView emailText = (TextView) headerView.findViewById(R.id.email);
-        emailText.setText("Furkan Kaya - Özay Öztürk");
+       // emailText.setText("Furkan Kaya - Özay Öztürk");
+        SharedPreferences preferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
+
+        String userName= preferences.getString("userName","");
+        String userSurname =preferences.getString("userSurname","");
+
+        emailText.setText(userName+" "+userSurname);
 
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -103,7 +110,7 @@ public class NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_main) {
             //Set the fragment initially
             MainFragment fragment = new MainFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -111,24 +118,51 @@ public class NavigationActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_contact_add) {
             //Set the fragment initially
-            ContactFragment fragment = new ContactFragment();
+            AddContactFragment fragment = new AddContactFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_contact_delete) {
+            DeleteContactFragment fragment = new DeleteContactFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_contact_edit) {
+            EditContactFragment fragment = new EditContactFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_message) {
+            MessageFragment fragment = new MessageFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_personal_info) {
+            UserInfoFragment fragment = new UserInfoFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         }
+        else if (id == R.id.nav_about_us) {
+            AboutUsFragment fragment = new AboutUsFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

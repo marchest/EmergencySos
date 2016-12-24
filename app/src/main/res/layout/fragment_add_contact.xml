@@ -3,15 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgnd"
-    tools:context="deu.emergencysos.UserInfoFragment">
-
+    tools:context="deu.emergencysos.AddContactFragment">
 
     <Button
 
-        android:id="@+id/update_user_info_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/add_button"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:text="UPDATE"
+        android:text="Add Contact"
         android:padding="8dp"
         android:textColor="#fff"
         android:background="@color/colorPrimary"
@@ -45,6 +44,7 @@
         android:layout_alignLeft="@+id/editTextPhone"
         android:layout_alignStart="@+id/editTextPhone" />
 
+<!--
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="90dp"
@@ -74,6 +74,7 @@
             android:checked="false"
             android:layout_weight="0.13" />
     </RadioGroup>
+-->
 
     <EditText
         android:layout_width="wrap_content"
@@ -81,7 +82,7 @@
         android:inputType="textPersonName"
         android:hint="Surname"
         android:ems="10"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:id="@+id/editTextSurname"
         android:layout_below="@+id/editTextName"
         android:layout_alignLeft="@+id/editTextName"
@@ -94,18 +95,8 @@
         android:ems="10"
         android:hint="Name"
         android:id="@+id/editTextName"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="73dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-
-    <!--user//name
-        surname
-        email
-        gender
-        phone
-
-        contact ->
-        name surname phone email-->
 
 </RelativeLayout>

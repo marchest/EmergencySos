@@ -2,19 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgnd"
     tools:context="deu.emergencysos.MainFragment">
 
     <Button
 
         android:id="@+id/main_button"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MAIN button"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="HELP ME"
         android:padding="8dp"
         android:textColor="#fff"
-        android:background="@color/colorPrimary"
-        android:textSize="28sp"
+        android:background="@drawable/button_selector"
+        android:textSize="40sp"
 
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
